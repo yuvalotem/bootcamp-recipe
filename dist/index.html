@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
     <title>Recipe app</title>
 </head>
 
@@ -18,9 +19,16 @@
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each data}}
             <div class="recipes">
-                <p class = "title"><a href="{{href}}">{{title}}</a></p>
-                <img src="{{thumbnail}}" onerror='this.src="https://i.ytimg.com/vi/ASGBDmZj6o0/sddefault.jpg"')>
-                <p class = "ingredients">{{ingredients}}</p>
+                <span class = "title"><a href="{{href}}">{{title}}</a></span>
+                <img class="dish-img" src="{{thumbnail}}">
+                <span class = "ingredients">
+                    <h4>Ingredients:</h4>
+                    <ul class="ingred-list">
+                    {{#each ingredients}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                    </ul>
+                </span>
             </div>
         {{/each}}
     </script>
